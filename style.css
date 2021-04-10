@@ -2,15 +2,15 @@ body {
    font-family: Roboto;
 }
 .idTop {
-   position: fixed; /*позиционирование кнопки фиксированное*/
-   z-index: 9999; /*отображаем поверх всех элементов*/
-   bottom: 0%; /*положение снизу*/
-   right: 0%; /*положение справа*/
-   background: #7db9e8; /*фон, можно указать любую картинку*/
-   opacity: .6; /*прозрачность*/
-   color: #fff; /*цвет текста*/
-   padding: 10px; /*внутренние отступы*/
-   margin: 5px 15px 15px 5px; /*внешние отступы*/
+   position: fixed; 
+   z-index: 9999; 
+   bottom: 0%; 
+   right: 0%; 
+   background: #7db9e8; 
+   opacity: .6; 
+   color: #fff; 
+   padding: 10px; 
+   margin: 5px 15px 15px 5px; 
    display: none;
   }
   .idTop:hover {
