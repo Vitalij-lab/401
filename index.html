@@ -2,16 +2,32 @@
 <html lang="ru">
 
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>JavaScript</title>
-   <link rel="stylesheet" href="css/style.css">
-</head>
+    <meta charset="UTF-8">
+    <title>С ДНЁМ РОЖДЕНИЯ</title>
+    <link rel="stylesheet" href="css/style.css"> </head>
 
 <body>
-   
-  <script src="js/script.js"></script>
+    <div class="container">
+        <h1 id="h1">С ДНЁМ РОЖДЕНИЯ</h1>
+        <section class="birthday">
+            <div class="birthdayInput">
+                <p class="inputTexst">Введите дату вашего рождения</p>
+                <div class="formInput">
+                    <input type="date" class="data" id="data">
+                    <button class="btn" onclick="result()">Рассчитать</button>
+                </div>
+            </div>
+            <div class="result" id="result">
+                <p class="pResult">Вы родились <span id="vo">в</span><br><span id="nameDay" class="red"></span><br>и сегодня вам <span id="finishDay2">исполнилось</span><br><span id="days" class="red"></span><br><span id="finishDay">дней</span></p>
+
+            </div>
+
+
+
+        </section>
+
+    </div>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
