@@ -1,54 +1,60 @@
-function result() {
-   let now = new Date();
-   let dayInput = document.getElementById('data').value;
-   let days = new Date(dayInput);
-   let weeks = Math.floor((now - days) / 86400000);
-   let n = weeks % 10;
-   let n2 = (weeks % 100);
-   let n3 = Math.floor(weeks / 1000);
-   let n4 =weeks - n3 * 1000; 
+// Задание №33
 
-       if (n3 == 0) {
-           n3 = "";
-       }
 
-       if (n3 > 0 && n4 < 10) {
-           n4 = `00${n4}`;
-       } else if (n3 > 0 && n4 < 100) {
-           n4 = `0${n4}`;
-       }
+document.querySelector(".task33-btn").onclick = function () {
+   let str = document.getElementById("task33-input");
+   str = str.value;  // Это вариант через JS
+   let str2 = str;   // Это вариант через CSS
 
-       if (n2 == 11) {
-           document.getElementById('finishDay2').innerHTML = 'исполнилось';
-           document.getElementById('finishDay').innerHTML = 'дней';
-       } else if (n == 1) {
-           document.getElementById('finishDay2').innerHTML = 'исполнился';
-           document.getElementById('finishDay').innerHTML = 'день';
-       } else if (n2 == 12 || n2 == 13 || n2 == 14) {
-           document.getElementById('finishDay2').innerHTML = 'исполнилось';
-           document.getElementById('finishDay').innerHTML = 'дней';
-       } else if (n == 2 || n == 3 || n == 4) {
-           document.getElementById('finishDay2').innerHTML = 'исполнилось';
-           document.getElementById('finishDay').innerHTML = 'дня';
-       } else {
-           document.getElementById('finishDay2').innerHTML = 'исполнилось';
-           document.getElementById('finishDay').innerHTML = 'дней';
-       }
+   str = str[0].toUpperCase() + str.substring(1);
+   document.querySelector('.version1').innerHTML = `${str} - это вариант через JS`;
+   document.querySelector('.version2').innerHTML = `${str2} - это вариант через CSS`;
+}
 
-   function getWeekDay(date) {
-       let days = ['ВОСКРЕСЕНЬЕ', 'ПОНЕДЕЛЬНИК', 'ВТОРНИК', 'СРЕДУ', 'ЧЕТВЕРГ', 'ПЯТНИЦУ', 'СУББОТУ'];
-       return days[date.getDay()];
+// Задание № 34
+
+let randomArr = [];
+document.querySelector(".task34-btn").onclick = function () {
+   randomArr = [];
+   let longArr = document.getElementById("task34-input");
+   let longArrValue = longArr.value;
+
+   for (let i = 0; i < longArrValue; i++) {
+
+      randomArr[i] = (Math.round(Math.random() * 10));
+      check(longArrValue);
    }
+   document.querySelector('.task34_1-p').innerHTML = `${randomArr}`;
+}
 
-   let nameDay = new Date(days);
+function check(longArrValue) {
+   let five = document.querySelector('.task34_2-p').innerHTML;
+   for (let i = 0; i < longArrValue; i++) {
 
-       if (getWeekDay(nameDay) == 'ВТОРНИК') {
-           document.getElementById('vo').innerHTML = 'во';
-       } else {
-           document.getElementById('vo').innerHTML = 'в';
-       }
-   document.getElementById('nameDay').innerHTML = getWeekDay(nameDay);
-   document.getElementById('days').innerHTML = `${n3} ${n4}`;
-   document.getElementById('result').style.display = 'block';
-   document.getElementById('h1').style.color = 'red';
+      if (randomArr[i] == 5) {
+         five = `Число 5 есть`;
+         break;
+      }
+      else {
+         five = `Числа 5 нет`;
+      }
+
+   }
+   document.querySelector('.task34_2-p').innerHTML = `${five}`;
+}
+
+// Задание № 35
+let valueNumber1 = document.getElementById("task35_1-input");
+let valueNumber2 = document.getElementById("task35_2-input");
+
+document.querySelector(".task35-btn").onclick = function () {
+   number1 = valueNumber1.value;
+   number2 = valueNumber2.value;
+
+   if (number1 === number2) {
+      document.querySelector('.task35-p').innerHTML = `Числа равны`;
+   }
+   else {
+      document.querySelector('.task35-p').innerHTML = `Числа не равны`;
+   }
 }
