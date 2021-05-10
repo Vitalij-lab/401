@@ -1,60 +1,82 @@
-// Задание №33
-
-
-document.querySelector(".task33-btn").onclick = function () {
-   let str = document.getElementById("task33-input");
-   str = str.value;  // Это вариант через JS
-   let str2 = str;   // Это вариант через CSS
-
-   str = str[0].toUpperCase() + str.substring(1);
-   document.querySelector('.version1').innerHTML = `${str} - это вариант через JS`;
-   document.querySelector('.version2').innerHTML = `${str2} - это вариант через CSS`;
+let arrMines = []; // ID случайных клеток для установки мин (изначально 8)
+let mines = document.getElementById('input'); //количество установленных мин, предустановлено 8
+let arrID = []; //массив ID (64 шт.)
+let random; //случайное число
+for (let i = 0; i < 64; i++) { // занесение ID в массив
+  arrID[i] = i + 1;
 }
 
-// Задание № 34
-
-let randomArr = [];
-document.querySelector(".task34-btn").onclick = function () {
-   randomArr = [];
-   let longArr = document.getElementById("task34-input");
-   let longArrValue = longArr.value;
-
-   for (let i = 0; i < longArrValue; i++) {
-
-      randomArr[i] = (Math.round(Math.random() * 10));
-      check(longArrValue);
-   }
-   document.querySelector('.task34_1-p').innerHTML = `${randomArr}`;
+for (let i = 0; i < mines.value; i++) { //выборка случайных клеток для установки мин (изначально 8)
+  random = Math.floor(Math.random() * (arrID.length));
+  arrMines[i] = arrID[random];
+  document.getElementById(arrMines[i]).classList.add("mina"); // устанавливаем мины
+  arrID.splice(random, 1);  //удаляем уже использованный ID
 }
 
-function check(longArrValue) {
-   let five = document.querySelector('.task34_2-p').innerHTML;
-   for (let i = 0; i < longArrValue; i++) {
+let squares = document.querySelectorAll(".square"); // Обозначает предполагаемое расположение мины правой кнопкой
 
-      if (randomArr[i] == 5) {
-         five = `Число 5 есть`;
-         break;
-      }
-      else {
-         five = `Числа 5 нет`;
-      }
+squares.forEach(square => {
+  square.addEventListener("contextmenu", (e) => {
+    this.oncontextmenu = function () { return false };
+    e.target.classList.toggle("danger");
+  })
+})
 
-   }
-   document.querySelector('.task34_2-p').innerHTML = `${five}`;
+squares.forEach(square => {
+  square.addEventListener("click", (e) => {
+
+    let attr = e.target.getAttribute("id");
+
+    if (e.target.classList.contains("mina")) {
+      alert(`Вы проиграли`)
+    } else {
+      e.target.classList.add("noMina")
+    }
+
+    e.target.innerHTML = quantityMines(attr);
+  })
+
+})
+function quantityMines(n) { // Считает сколько рядом мин
+
+  let nearbyMines = 0;
+
+  if ((+n > 8 && +n % 8 != 1) && document.getElementById(`${+n - 9}`).classList.contains("mina")) {
+    nearbyMines += 1;
+  }
+  if (+n > 8 && document.getElementById(`${+n - 8}`).classList.contains("mina")) {
+    nearbyMines += 1;
+  }
+  if ((+n > 8 && +n % 8 != 0) && document.getElementById(`${+n - 7}`).classList.contains("mina")) {
+    nearbyMines += 1;
+  }
+  if ((n != 1 && +n % 8 != 1) && document.getElementById(`${+n - 1}`).classList.contains("mina")) {
+    nearbyMines += 1;
+  }
+  if (+n % 8 != 0 && document.getElementById(`${+n + 1}`).classList.contains("mina")) {
+    nearbyMines += 1;
+  }
+  if ((+n < 57 && +n % 8 != 1) && document.getElementById(`${+n + 7}`).classList.contains("mina")) {
+    nearbyMines += 1;
+  }
+  if (+n < 57 && document.getElementById(`${+n + 8}`).classList.contains("mina")) {
+    nearbyMines += 1;
+  }
+  if ((+n < 57 && +n % 8 != 0) && document.getElementById(`${+n + 9}`).classList.contains("mina")) {
+    nearbyMines += 1;
+  }
+
+  return nearbyMines;
 }
 
-// Задание № 35
-let valueNumber1 = document.getElementById("task35_1-input");
-let valueNumber2 = document.getElementById("task35_2-input");
 
-document.querySelector(".task35-btn").onclick = function () {
-   number1 = valueNumber1.value;
-   number2 = valueNumber2.value;
 
-   if (number1 === number2) {
-      document.querySelector('.task35-p').innerHTML = `Числа равны`;
-   }
-   else {
-      document.querySelector('.task35-p').innerHTML = `Числа не равны`;
-   }
-}
+
+
+
+
+
+
+
+
+
