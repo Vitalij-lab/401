@@ -1,7 +1,10 @@
 let arrMines = []; // ID случайных клеток для установки мин (изначально 8)
-let mines = document.getElementById('input'); //количество установленных мин, предустановлено 8
-let arrID = []; //массив ID (64 шт.)
-let random; //случайное число
+let mines = document.getElementById('input'); //Количество установленных мин, предустановлено 8
+let arrID = []; //Массив ID (64 шт.)
+let random; //Случайное число
+let current; // Время 
+let t2; // Минуты 
+let t3; // Секунды 
 for (let i = 0; i < 64; i++) { // занесение ID в массив
   arrID[i] = i + 1;
 }
@@ -13,22 +16,22 @@ for (let i = 0; i < mines.value; i++) { //выборка случайных кл
   arrID.splice(random, 1);  //удаляем уже использованный ID
 }
 
-let squares = document.querySelectorAll(".square"); // Обозначает предполагаемое расположение мины правой кнопкой
+let squares = document.querySelectorAll(".square"); 
 
-squares.forEach(square => {
+squares.forEach(square => {    // Обозначает предполагаемое расположение мины правой кнопкой
   square.addEventListener("contextmenu", (e) => {
     this.oncontextmenu = function () { return false };
     e.target.classList.toggle("danger");
   })
 })
 
-squares.forEach(square => {
+squares.forEach(square => {   // Открытие клеток левой кнопкой
   square.addEventListener("click", (e) => {
 
     let attr = e.target.getAttribute("id");
 
     if (e.target.classList.contains("mina")) {
-      alert(`Вы проиграли`)
+      alert("Вы проиграли!");
     } else {
       e.target.classList.add("noMina")
     }
@@ -69,8 +72,15 @@ function quantityMines(n) { // Считает сколько рядом мин
   return nearbyMines;
 }
 
+// setTimeout(function run() {  // секундомер
+//   setTimeout(run, 1000);
+//   current += 1;
+//   t3 = current % 60;
+//   t2 = Math.trunc(current % 60);
 
+// }, 1000);
 
+// alert("Игра окончена!\nВы проиграли\nЗатрачено времени:  " + t2 + " мин. " + t3 + " сек.");
 
 
 
