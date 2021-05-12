@@ -3,13 +3,15 @@ let mines = document.getElementById('input'); //Количество устан�
 let arrID = []; //Массив ID (64 шт.)
 let random; //Случайное число
 let current; // Время 
+let t = 0; // счёт времени
 let t2; // Минуты 
 let t3; // Секунды 
+let stopTime = 0; // флажок для остановки времени
 for (let i = 0; i < 64; i++) { // занесение ID в массив
   arrID[i] = i + 1;
 }
 
-for (let i = 0; i < mines.value; i++) { //выборка случайных клеток для установки мин (изначально 8)
+for (let i = 0; i < mines.value; i++) { //выборка случайных клеток для установки мин
   random = Math.floor(Math.random() * (arrID.length));
   arrMines[i] = arrID[random];
   document.getElementById(arrMines[i]).classList.add("mina"); // устанавливаем мины
@@ -30,16 +32,32 @@ squares.forEach(square => {   // Открытие клеток левой кно
 
     let attr = e.target.getAttribute("id");
 
-    if (e.target.classList.contains("mina")) {
-      alert("Вы проиграли!");
+    if (e.target.classList.contains("mina")) { // Если подорвались
+      for (let i = 0; i < mines.value; i++) { // мины взорвались 
+        document.getElementById(arrMines[i]).classList.add("minaBang"); 
+        
+      }
+      e.target.innerHTML = "!!!!";
+      stopTime = 1;
+      document.getElementById('time').innerHTML = "Игра окончена! Вы проиграли. Затрачено времени:  " + t2 + " мин. " + t3 + " сек."
+      let field = document.querySelector(".field");  // делает не кликабельными клеточки
+      field.classList.add("cursor");
     } else {
-      e.target.classList.add("noMina")
+      e.target.classList.add("noMina")  // открывает клетку где мин нет
+      e.target.innerHTML = quantityMines(attr);
     }
-
-    e.target.innerHTML = quantityMines(attr);
+    let noMina = document.querySelectorAll(".noMina"); 
+    if (noMina.length == 64 - mines.value){
+      stopTime = 1;
+      document.getElementById('time').innerHTML = "Игра окончена! ВЫ ВЫГРАЛИ! Затрачено времени:  " + t2 + " мин. " + t3 + " сек."
+      for (let i = 0; i < mines.value; i++) { // мины взорвались 
+        document.getElementById(arrMines[i]).classList.add("minaBang"); 
+        
+      }
+    }
   })
-
 })
+
 function quantityMines(n) { // Считает сколько рядом мин
 
   let nearbyMines = 0;
@@ -71,16 +89,25 @@ function quantityMines(n) { // Считает сколько рядом мин
 
   return nearbyMines;
 }
+a(); // Счётчик времени
+function a() {
+  if (stopTime != 1) {
+      t2 = Math.trunc(t / 60);
+      t3 = t - t2 * 60;
+      if (t3 < 10) {
+          t3 = ' 0' + t3;
+          document.getElementById('time').innerHTML = 'Время:  ' + t2 + ':' + t3;
+          t++;
+      }
+      else {
+          document.getElementById('time').innerHTML = 'Время:  ' + t2 + ': ' + t3;
+          t++;
+      }
+      setTimeout(a, 1000);
+  }
+}
 
-// setTimeout(function run() {  // секундомер
-//   setTimeout(run, 1000);
-//   current += 1;
-//   t3 = current % 60;
-//   t2 = Math.trunc(current % 60);
 
-// }, 1000);
-
-// alert("Игра окончена!\nВы проиграли\nЗатрачено времени:  " + t2 + " мин. " + t3 + " сек.");
 
 
 

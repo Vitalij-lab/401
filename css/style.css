@@ -2,7 +2,7 @@ h1 {
    padding: 40px 0;
 }
 
-container {
+.container {
    text-align: center;
 }
 
@@ -25,11 +25,16 @@ container {
 }
 
 .mina {
+   /* background-image: url(../img/mina.png); */
+   background-color: rgb(235, 235, 230);
+}
+.minaBang {
    background-image: url(../img/mina.png);
 }
 
 .input-p {
    padding-top: 20px;
+   display: none;
 }
 
 .danger {
@@ -38,4 +43,13 @@ container {
 
 .noMina {
    background: blue;
+}
+#time{
+   padding-top: 20px;
+   font-size: 20px;
+   font-weight: 700;
+   /* display: none; */
+}
+.cursor{
+   pointer-events: none;
 }
