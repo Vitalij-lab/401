@@ -1,3 +1,9 @@
+body {
+   height: 100vh;
+   background: red;
+   background: linear-gradient(rgb(87, 230, 170), yellow);
+}
+
 h1 {
    padding: 40px 0;
 }
@@ -10,7 +16,6 @@ h1 {
    display: flex;
    flex-wrap: wrap;
    width: 414px;
-   margin: 0 auto;
 }
 
 .square {
@@ -25,9 +30,9 @@ h1 {
 }
 
 .mina {
-   /* background-image: url(../img/mina.png); */
    background-color: rgb(235, 235, 230);
 }
+
 .minaBang {
    background-image: url(../img/mina.png);
 }
@@ -44,12 +49,84 @@ h1 {
 .noMina {
    background: blue;
 }
-#time{
+
+#time {
    padding-top: 20px;
    font-size: 20px;
    font-weight: 700;
-   /* display: none; */
+   padding: 20px 0;
 }
-.cursor{
+
+.cursor {
    pointer-events: none;
+}
+
+.btn {
+   cursor: pointer;
+   display: none;
+   margin: 0 auto;
+   width: 150px;
+   font-weight: 600;
+   font-size: 20px;
+   height: 40px;
+   background: red;
+   -webkit-transition: width 0.5s, height 0.5s, font-weight 0.5s;
+   transition: width 0.5s, height 0.5s, font-weight 0.5s;
+   border-radius: 5%;
+}
+
+.btn:hover {
+   width: 190px;
+   height: 60px;
+   font-weight: 900;
+}
+
+.wrapper {
+   display: flex;
+   justify-content: center;
+   margin-left: 230px;
+}
+
+.count {
+   width: 230px;
+   height: 400px;
+   font-weight: 600;
+   overflow: auto
+}
+
+.grad1 {
+   height: 100vh;
+   background: red;
+   background: linear-gradient(red, yellow);
+}
+
+.grad2 {
+   height: 100vh;
+   background: red;
+   background: radial-gradient(red, yellow, green);
+}
+
+.grad3 {
+   height: 100vh;
+   background: rgb(87, 230, 170);
+   background: linear-gradient(rgb(136, 53, 231), rgb(163, 236, 163));
+}
+
+canvas {
+   display: none;
+}
+
+input {
+   display: none;
+}
+
+.muteOff {
+   width: 64px;
+   height: 64px;
+   margin: 0 auto;
+   display: none;
+}
+
+.speaker {
+   margin: 0 auto;
 }
