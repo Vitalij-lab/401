@@ -13,7 +13,6 @@ for (let i = 0; i < 64; i++) { // занесение ID в массив
   arrID[i] = i + 1;
 }
 let field = document.querySelector(".field");  // делает не кликабельными клеточки
-// field.classList.add("cursor"); // Блокирует клики 
 
 document.querySelector(".btn").onclick = function () {
   location.reload();
@@ -59,12 +58,9 @@ squares.forEach(square => {   // Открытие клеток левой кно
       e.target.innerHTML = "!!!!";
       stopTime = 1;
       document.getElementById('time').innerHTML = "Игра окончена! Вы проиграли. Затрачено времени:  " + t2 + " мин. " + t3 + " сек."
-      // document.querySelector("#play").pause();
 
-      if (chbox.checked) {
         document.querySelector("#play").pause();
         document.querySelector("#play3").play();
-      }
       field.classList.add("cursor"); // Блокирует клики 
       document.querySelector(".container").style.display = "none";
       document.querySelector(".btn").style.display = "block";
@@ -82,12 +78,8 @@ squares.forEach(square => {   // Открытие клеток левой кно
       document.querySelector("canvas").style.display = "block";
       document.querySelector(".container").style.display = "none";
       setTimeout(showWin, 2000);
-      if (chbox.checked) {
-        document.querySelector("#play").pause();
-        document.querySelector("#play2").play();
-      }
-      // document.querySelector("#play").pause();
-      // document.querySelector("#play2").play();
+      document.querySelector("#play").pause();
+      document.querySelector("#play2").play();
       stopTime = 1;
       field.classList.add("cursor"); // Блокирует клики  
       document.getElementById('time').innerHTML = "Игра окончена! ВЫ ВЫГРАЛИ! Затрачено времени:  " + t2 + " мин. " + t3 + " сек."
@@ -186,7 +178,6 @@ class Battery {
     this.tmax = 500 + Math.random() * 1000;
 
     this._shot = salve => {
-      // console.log(this.x * this.fireworks.width, salve.y);
       if (salve.y < salve.ym) {
         salve.cb = this._prepareExplosion;
       }
@@ -212,7 +203,6 @@ class Battery {
       this.fireworks.engine.lineWidth = 3;
       this.fireworks.engine.stroke();
 
-      // this.fireworks.engine.fillRect((this.x + salve.x) * this.fireworks.width, salve.y * this.fireworks.height, 10, 10);
     };
 
     this._prepareExplosion = salve => {
