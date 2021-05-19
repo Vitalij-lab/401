@@ -16,6 +16,7 @@ h1 {
    display: flex;
    flex-wrap: wrap;
    width: 414px;
+   min-width: 414px;
 }
 
 .square {
@@ -129,4 +130,22 @@ input {
 
 .speaker {
    margin: 0 auto;
+}
+
+@media screen and (max-width: 892px) {
+	.count {
+		width: 100px;
+	}
+	.wrapper {
+		margin-left: 100px;
+	}
+}
+
+@media screen and (max-width: 730px) {
+	.count {
+		display: none;
+	}
+	.wrapper {
+		margin-left: 0;
+	}
 }
