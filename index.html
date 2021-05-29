@@ -7,104 +7,59 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <title>САПЁР</title>
    <link rel="stylesheet" href="css/reset.css" />
-   <link rel="stylesheet" href="css/adaptation.css" />
    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
 
    <div class="container">
-
-      <h1>САПЁР</h1>
-      <div class="wrapper">
-         <div class="field">
-            <div id="1" class="square"></div>
-            <div id="2" class="square"></div>
-            <div id="3" class="square"></div>
-            <div id="4" class="square"></div>
-            <div id="5" class="square"></div>
-            <div id="6" class="square"></div>
-            <div id="7" class="square"></div>
-            <div id="8" class="square"></div>
-            <div id="9" class="square"></div>
-            <div id="10" class="square"></div>
-            <div id="11" class="square"></div>
-            <div id="12" class="square"></div>
-            <div id="13" class="square"></div>
-            <div id="14" class="square"></div>
-            <div id="15" class="square"></div>
-            <div id="16" class="square"></div>
-            <div id="17" class="square"></div>
-            <div id="18" class="square"></div>
-            <div id="19" class="square"></div>
-            <div id="20" class="square"></div>
-            <div id="21" class="square"></div>
-            <div id="22" class="square"></div>
-            <div id="23" class="square"></div>
-            <div id="24" class="square"></div>
-            <div id="25" class="square"></div>
-            <div id="26" class="square"></div>
-            <div id="27" class="square"></div>
-            <div id="28" class="square"></div>
-            <div id="29" class="square"></div>
-            <div id="30" class="square"></div>
-            <div id="31" class="square"></div>
-            <div id="32" class="square"></div>
-            <div id="33" class="square"></div>
-            <div id="34" class="square"></div>
-            <div id="35" class="square"></div>
-            <div id="36" class="square"></div>
-            <div id="37" class="square"></div>
-            <div id="38" class="square"></div>
-            <div id="39" class="square"></div>
-            <div id="40" class="square"></div>
-            <div id="41" class="square"></div>
-            <div id="42" class="square"></div>
-            <div id="43" class="square"></div>
-            <div id="44" class="square"></div>
-            <div id="45" class="square"></div>
-            <div id="46" class="square"></div>
-            <div id="47" class="square"></div>
-            <div id="48" class="square"></div>
-            <div id="49" class="square"></div>
-            <div id="50" class="square"></div>
-            <div id="51" class="square"></div>
-            <div id="52" class="square"></div>
-            <div id="53" class="square"></div>
-            <div id="54" class="square"></div>
-            <div id="55" class="square"></div>
-            <div id="56" class="square"></div>
-            <div id="57" class="square"></div>
-            <div id="58" class="square"></div>
-            <div id="59" class="square"></div>
-            <div id="60" class="square"></div>
-            <div id="61" class="square"></div>
-            <div id="62" class="square"></div>
-            <div id="63" class="square"></div>
-            <div id="64" class="square"></div>
-         </div>
-         <div id="count" class="count"></div>
+      <div class="test">
+         <button class="btn-test hidden">Показать мины</button>
+         <button class="btn-test btn-test2 hidden">Показать не пустые</button>
+         <button class="btn-test btn-test3 hidden">Показать пустые</button>
       </div>
 
-      <input type="checkbox" id="one" onchange="fun1()">
-      <label for="one"><img src="img/muteOff.png" alt="muteOff" class="muteOff"></label>
-      <label for="one"><img src="img/speaker.png" alt="speaker" class="speaker"></label>
-      <audio src="audio/audioback.mp3" id="play"></audio>
+      <h1>САПЁР</h1>
+      <div class="tablo-levels">
+         <p class="tablo"><span class="span3">Осталось времени:</span><span id="time" class="time"> 1:00</span> <span
+               id="restMines">Не обозначенных мин: </span><span id="restMines2" class="restMines2"></span></p>
+         <div class="levels">
+            <p class="levels-p">Выберите уровень</p>
+            <div class="radio-wrapper">
+            <div class="div-radio">
+               <input id="radio1" type="radio" name="level" value="low" checked>
+               <label class="label1" for="radio1"><img src="img/radio-2.png" alt="img">Низкий</label>
+               <label class="label2" for="radio1"><img src="img/radio-1.png" alt="img">Низкий</label>
+            </div>
+            <div class="div-radio">
+               <input id="radio2" type="radio" name="level" value="middle">
+               <label class="label1" for="radio2"><img src="img/radio-2.png" alt="img">Средний</label>
+               <label class="label2" for="radio2"><img src="img/radio-1.png" alt="img">Средний</label>
+            </div>
+            <div class="div-radio">
+               <input id="radio3" type="radio" name="level" value="high">
+               <label class="label1" for="radio3"><img src="img/radio-2.png" alt="img">Высокий</label>
+               <label class="label2" for="radio3"><img src="img/radio-1.png" alt="img">Высокий</label>
+            </div>
+         </div>
+         </div>
+      </div>
+
+      <button class="btn newGame hidden">Новая игра</button>
+      <button class="btn game">Играть</button>
+
+      <div class="wrapper">
+         <div id="field" class="field">
+         </div>
+         <div id="count" class="count">
+            <h3><span class="span1"></span></h3>
+         </div>
+      </div>
+
+      <audio src="audio/timer-bell_m1tycbno.mp3" id="play1"></audio>
       <audio src="audio/aplodismenty.mp3" id="play2"></audio>
-      <audio src="audio/concerto.mp3" id="play3"></audio>
-      <p id="time"></p>
-
-      <button class="btn">Новая игра</button>
-
-      <p class="input-p">
-         Сколько мин установить:
-         <input type="number" id="input" min="0" value="8" />
-      </p>
+      <audio src="audio/bolshoy_vzryv.mp3" id="play3"></audio>
    </div>
-   
-   
-   
-   <canvas></canvas>
    <script src="js/script.js"></script>
 </body>
 

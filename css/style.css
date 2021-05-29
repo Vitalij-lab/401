@@ -1,45 +1,176 @@
+.btn-test {
+   cursor: pointer;
+   font-weight: 700;
+   background: linear-gradient(to top, #d51438 0%, #91000091 100%);
+   text-transform: uppercase;
+   margin-bottom: 20px;
+   color: white;
+   padding: 7px 20px;
+   border: none;
+}
+.btn-test:hover {
+   background: #ff7373;
+}
+
 body {
    height: 100vh;
    background: red;
-   background: linear-gradient(rgb(87, 230, 170), yellow);
-}
-
-h1 {
-   padding: 40px 0;
+   background: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
 }
 
 .container {
    text-align: center;
+   padding-top: 20px;
+}
+
+h1 {
+   margin-bottom: 10px;
+   color: #1667c4;
+}
+
+.tablo-levels {
+   background-color: #ffffff9e;
+   margin: auto;
+   width: 57%;
+   padding: 20px 0;
+   border-radius: 10px;
+}
+
+.radio-wrapper {
+   display: flex;
+   justify-content: center;
+}
+
+.div-radio {
+   display: flex;
+   justify-content: space-between;
+   width: 110px;
+   align-items: center;
+   vertical-align: middle;
+}
+
+[name="level"] {
+   display: none;
+}
+
+.label1 {
+   display: none;
+}
+
+[alt="img"] {
+   margin-right: 5px;
+}
+
+input[type=radio]:checked~.label2 {
+   display: none;
+}
+
+input[type=radio]:checked+.label1 {
+   display: flex;
+}
+
+.label2 {
+   display: flex;
+}
+
+.time {
+   margin-right: 20px;
+   font-weight: 700;
+   font-size: 20px;
+   padding: 0 3px;
+   color: red;
+}
+
+.restMines2 {
+   margin-right: 20px;
+   font-weight: 700;
+   font-size: 20px;
+   padding: 0 3px;
+   color: red;
+}
+
+.wrapper {
+   display: flex;
+   justify-content: center;
+   padding-left: 270px;
 }
 
 .field {
    display: flex;
    flex-wrap: wrap;
-   width: 414px;
-   min-width: 414px;
+   box-shadow: 0 0 20px 7px #99b9f5;
+   outline: 10px groove #8dbbf1;
+}
+
+.fieldLow {
+   width: 250px;
+   min-width: 250px;
+}
+
+.fieldMiddle {
+   width: 400px;
+   min-width: 400px;
+}
+
+.fieldHigh {
+   width: 450px;
+   min-width: 450px;
 }
 
 .square {
-   width: 50px;
-   height: 50px;
    background-color: rgb(235, 235, 230);
-   border: 1px solid black;
+   border: 1px solid #94d3ffb8;
    cursor: pointer;
    color: red;
-   font-size: 40px;
    font-weight: 900;
 }
 
-.mina {
-   background-color: rgb(235, 235, 230);
+.squareLow {
+   width: 50px;
+   height: 50px;
+   font-size: 40px;
 }
 
-.minaBang {
-   background-image: url(../img/mina.png);
+.squareMiddle {
+   width: 40px;
+   height: 40px;
+   font-size: 30px;
 }
 
-.input-p {
-   padding-top: 20px;
+.squareHigh {
+   width: 30px;
+   height: 30px;
+   font-size: 25px;
+}
+
+.levels, .tablo {
+   font-weight: 700;
+}
+
+.levels-p {
+   padding: 10px 0;
+}
+
+.btn {
+   margin: 20px 0;
+   cursor: pointer;
+   padding: 10px 30px;
+   text-transform: uppercase;
+   font-weight: bold;
+   color: white;
+   background: #057ed4;
+   border: none;
+   box-shadow: 0 0 0 5px #0263b5;
+   margin-bottom: 35px;
+   outline: none;
+   box-shadow: 0 0 0 5px #2d7bbb;
+}
+.btn:hover {
+   
+   background: #3fa6f0;
+}
+
+.hidden {
    display: none;
 }
 
@@ -51,54 +182,18 @@ h1 {
    background: blue;
 }
 
-#time {
-   padding-top: 20px;
-   font-size: 20px;
-   font-weight: 700;
-   padding: 20px 0;
+.minaBang {
+   background-image: url(../img/mina.png);
+   background-position: center;
 }
 
 .cursor {
    pointer-events: none;
 }
 
-.btn {
-   cursor: pointer;
-   display: none;
-   margin: 0 auto;
-   width: 150px;
-   font-weight: 600;
-   font-size: 20px;
-   height: 40px;
-   background: red;
-   -webkit-transition: width 0.5s, height 0.5s, font-weight 0.5s;
-   transition: width 0.5s, height 0.5s, font-weight 0.5s;
-   border-radius: 5%;
-}
-
-.btn:hover {
-   width: 190px;
-   height: 60px;
-   font-weight: 900;
-}
-
-.wrapper {
-   display: flex;
-   justify-content: center;
-   margin-left: 230px;
-}
-
-.count {
-   width: 230px;
-   height: 400px;
-   font-weight: 600;
-   overflow: auto
-}
-
 .grad1 {
-   height: 100vh;
-   background: red;
-   background: linear-gradient(red, yellow);
+   background: url(../img/UWw6.gif);
+   background-size: cover;
 }
 
 .grad2 {
@@ -113,39 +208,109 @@ h1 {
    background: linear-gradient(rgb(136, 53, 231), rgb(163, 236, 163));
 }
 
-canvas {
-   display: none;
+.grad4 {
+   height: 100vh;
+   background: linear-gradient(#f1a5a594, #92032a8a);
 }
 
-input {
-   display: none;
+.count {
+   width: 250px;
+   height: 400px;
+   font-weight: 600;
+   overflow: auto;
+   background: #eaefff;
+   border-radius: 10px;
+   padding: 20px 0;
+   margin-left: 30px;
+   box-shadow: 0 0 4px #4160f7;
+   visibility: hidden;
 }
 
-.muteOff {
-   width: 64px;
-   height: 64px;
-   margin: 0 auto;
-   display: none;
+.count p {
+   line-height: 140%;
 }
 
-.speaker {
-   margin: 0 auto;
+.span1 {
+   text-transform: uppercase;
+   font-size: 0.8rem;
+   font-family: "Verdana";
+   color: #1073ed;
+}
+
+.span2 {
+   font-size: 1.15rem;
+   color: #be0606;
+}
+
+.minShow {
+   background: #f8faadd6;
 }
 
 @media screen and (max-width: 892px) {
-	.count {
-		width: 100px;
-	}
-	.wrapper {
-		margin-left: 100px;
-	}
+   .count {
+      width: 100px;
+   }
+   .wrapper {
+      margin-left: 100px;
+      padding-left: 0;
+   }
 }
 
 @media screen and (max-width: 730px) {
-	.count {
-		display: none;
-	}
-	.wrapper {
-		margin-left: 0;
-	}
+   .count {
+      width: 40%;
+      margin: 20px auto;
+   }
+   .wrapper {
+      margin-left: 0;
+      display: block;
+   }
+   .field {
+      margin: 0 auto;
+   }
+   .tablo {
+      display: block;
+      width: 220px;
+      margin: 0 auto;
+   }
+   .levels {
+      font-size: 14px;
+   }
+   .div-radio {
+      width: 85px;
+   }
+}
+
+@media screen and (max-width: 480px) {
+   .time {
+      font-size: 18px;
+   }
+   .count {
+      width: 75%;
+   }
+   .tablo-levels {
+      width: 75%;
+   }
+   .tablo {
+      width: 214px;
+   }
+   .div-radio:last-child {
+      display: none;
+   }
+   .wrapper {
+      padding-left: 0;
+   }
+   .div-radio {
+      margin-bottom: 7px;
+   }
+   .squareMiddle {
+      width: 30px;
+      height: 30px;
+      font-size: 25px;
+   }
+   
+   .fieldMiddle {
+      width: 300px;
+      min-width: 300px;
+   }
 }
