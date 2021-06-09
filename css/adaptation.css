@@ -1,63 +1,103 @@
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1220px) {
 	.container {
 		max-width: 960px;
 	}
-	.master{
+	.master {
 		width: 200px;
 		height: 244px;
 		padding-right: 30px;
 	}
 }
 
+@media screen and (max-width: 1030px) {
+	.master {
+		display: none;
+	}
+	.manufacturer {
+		font-size: 1.2rem;
+	}
+}
+
 @media screen and (max-width: 992px) {
-	/* .container {
-		width: 720px;
+	.text-p {
+		font-size: 16px;
+		padding-left: 10px;
+		padding-right: 10px;
 	}
-	.wrapper {
-		flex-direction: column;
-	}
-	.offer {
-		width: 100%;
-	}
-	.intro {
-		width: auto;
-	}
-	.desktop {
+}
+
+@media screen and (max-width: 860px) {
+	.header-nav-ul {
 		display: block;
-	    width: 549px;
-	    margin: 72px auto 0;
 	}
-	.skills {
+	.header-nav-ul li {
+		margin-bottom: 10px;
+	}
+	.header-h1 {
+		font-size: 3rem;
+	}
+	.text-p {
+		font-size: 14px;
+		width: 670px;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.text {
+		display: block;
+		padding-top: 10px;
+		text-align: center;
+	}
+	.text-p {
+		font-size: 14px;
+		width: 100%;
+		padding: 0px 30px 30px 30px;
+		text-align: left;
+	}
+	.manufacturer li {
+		padding-bottom: 5px;
+	}
+}
+
+@media screen and (max-width: 750px) {
+	.maps {
+		width: 630px;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	.maps {
+		width: 530px;
+	}
+	.form-contacts {
 		flex-direction: column;
-	}
-	.skill {
-		width: auto;
-		margin-bottom: 30px;
-	} */
-}
-
-@media screen and (max-width: 768px) {
-	/* .container {
-		width: 540px;
-	}
-	.desktop {
+		align-items: center;
 		width: 100%;
 	}
-	.input {
-		width: 100%;
+	.message {
+		width: 280px;
 	}
-	.btn {
-		margin-left: 0;
-	    margin-top: 15px;
-	    width: 100%;
-	} */
 }
 
-@media screen and (max-width: 576px) {
-     /* body {
-        width: 180%;
-    }
-	.container {
-		width: 90%;
-	} */
+@media screen and (max-width: 530px) {
+	.header-wrapper-logo {
+		display: block;
+		text-align: center;
+	}
+	.wrapper-logo {
+		display: none;
+	}
+	.header-h1 {
+		padding-top: 15px;
+		font-size: 2rem;
+	}
+	.maps {
+		width: 400px;
+	}
+}
+
+@media screen and (max-width: 420px) {
+	.maps {
+		width: 300px;
+	}
 }
