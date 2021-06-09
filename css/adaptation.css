@@ -1,0 +1,103 @@
+@media screen and (max-width: 1220px) {
+	.container {
+		max-width: 960px;
+	}
+	.master {
+		width: 200px;
+		height: 244px;
+		padding-right: 30px;
+	}
+}
+
+@media screen and (max-width: 1030px) {
+	.master {
+		display: none;
+	}
+	.manufacturer {
+		font-size: 1.2rem;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.text-p {
+		font-size: 16px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+
+@media screen and (max-width: 860px) {
+	.header-nav-ul {
+		display: block;
+	}
+	.header-nav-ul li {
+		margin-bottom: 10px;
+	}
+	.header-h1 {
+		font-size: 3rem;
+	}
+	.text-p {
+		font-size: 14px;
+		width: 670px;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.text {
+		display: block;
+		padding-top: 10px;
+		text-align: center;
+	}
+	.text-p {
+		font-size: 14px;
+		width: 100%;
+		padding: 0px 30px 30px 30px;
+		text-align: left;
+	}
+	.manufacturer li {
+		padding-bottom: 5px;
+	}
+}
+
+@media screen and (max-width: 750px) {
+	.maps {
+		width: 630px;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	.maps {
+		width: 530px;
+	}
+	.form-contacts {
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+	}
+	.message {
+		width: 280px;
+	}
+}
+
+@media screen and (max-width: 530px) {
+	.header-wrapper-logo {
+		display: block;
+		text-align: center;
+	}
+	.wrapper-logo {
+		display: none;
+	}
+	.header-h1 {
+		padding-top: 15px;
+		font-size: 2rem;
+	}
+	.maps {
+		width: 400px;
+	}
+}
+
+@media screen and (max-width: 420px) {
+	.maps {
+		width: 300px;
+	}
+}
